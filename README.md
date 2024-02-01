@@ -30,29 +30,17 @@ Yeni bir sunucu almadım fakat Hetzner kullandım.
 # Servis oluşturma, mmadresinizi kendinize göre düzenleyin.
 
 >sudo tee /etc/systemd/system/bevm.service > /dev/null << EOF
-
 >[Unit]
-
 >Description=BEVM
-
 >After=network-online.target
-
 >StartLimitIntervalSec=0
-
 >[Service]
-
 >User=root
-
 >Restart=always
-
 >RestartSec=3
-
 >ExecStart=/usr/bin/bevm --chain=testnet --name="mmadresiniz" --pruning=archive --telemetry-url "wss://telemetry.bevm.io/submit 0"
-
 >[Install]
-
 >WantedBy=multi-user.target
-
 >EOF
 
 # Servis başlatma
